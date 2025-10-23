@@ -12,7 +12,7 @@ struct HTTPClient {
     // MARK: - Base URL
     let baseURL = "http://localhost:3000"
     
-    func UserRegistration(_ request: UserRegisterRequest) async throws {
+    func userRegistration(_ request: UserRegisterRequest) async throws {
         guard let url = URL(string: "\(baseURL)/users") else {
             throw URLError(.badURL)
         }

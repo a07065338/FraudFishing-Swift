@@ -18,18 +18,18 @@ struct HTTPUsuario {
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
         // Imprimimos para depurar y ver que el token se está enviando
-        print("🚀 Petición a /users/me con Token: Bearer \(token)")
+        print(" Petición a /users/me con Token: Bearer \(token)")
 
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            print("❌ Error: No se pudo obtener el perfil. Status: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
+            print(" Error: No se pudo obtener el perfil. Status: \((response as? HTTPURLResponse)?.statusCode ?? 0)")
             throw URLError(.badServerResponse)
         }
         
         // Decodificamos la respuesta en nuestro nuevo modelo.
         let userProfile = try JSONDecoder().decode(UserProfile.self, from: data)
-        print("✅ Perfil de usuario recibido: \(userProfile.name)")
+        print(" Perfil de usuario recibido: \(userProfile.name)")
         return userProfile
     }
     

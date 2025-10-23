@@ -20,8 +20,8 @@ class UserProfileController: ObservableObject {
             self.errorMessage = "Error al cargar el perfil: \(error.localizedDescription)"
         }
     }
-    
-    // --- ✅ SOLUCIÓN: Actualizar Nombre ahora devuelve Bool ---
+    /// Actualiza el nombre del usuario y retorna `true` si la operación fue exitosa.
+    /// Retorna `false` en caso de error de validación o red.
     func updateName(_ newName: String) async -> Bool { // <-- 1. Añadimos el tipo de retorno
         guard !newName.isEmpty else {
             self.errorMessage = "El nombre no puede estar vacío."

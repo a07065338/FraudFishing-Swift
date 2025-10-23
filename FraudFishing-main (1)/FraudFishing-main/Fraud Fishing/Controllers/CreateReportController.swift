@@ -24,7 +24,6 @@ class CreateReportController: ObservableObject {
         }
         
         do {
-            let httpFile = HTTPFile()
             let response = try await httpFile.uploadImage(imageData: compressedData)
             return response.path
         } catch {

@@ -17,8 +17,8 @@ struct User: Codable {
     let id: Int
     let email: String
     let name: String
-    let is_admin: Int
-    let is_super_admin: Int
+    let isAdmin: Int
+    let isSuperAdmin: Int
 }
 
 struct UserLoginResponse: Decodable {

@@ -28,7 +28,7 @@ class AuthenticationController: ObservableObject {
         
         do {
             // Esta función no devuelve nada, solo puede lanzar un error.
-            try await httpClient.UserRegistration(request)
+            try await httpClient.userRegistration(request)
             // Si no hubo error, el registro fue exitoso.
         } catch {
             // Si hubo un error de red o de status code, lo capturamos.

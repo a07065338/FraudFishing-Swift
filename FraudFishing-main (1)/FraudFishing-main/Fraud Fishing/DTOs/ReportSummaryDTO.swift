@@ -2,7 +2,6 @@ import Foundation
 
 // ℹ️ DTO para los detalles de un solo reporte (como en tu imagen)
 // Puedes usar tu 'ReportResponse' existente si ya la tienes definida
-// struct ReportDetail: Codable { ... }
 
 // 1. Estructura para el resumen que mostrará la tarjeta
 struct ReportSummaryDTO: Codable {
